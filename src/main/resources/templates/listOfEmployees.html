@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>Position</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${list}" style="cursor: pointer"
+        th:onclick="'javascript:rowClicked(\'' + ${user.id} + '\');'">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.position}"></td>
+        <td>
+            <form action="editEmployee.html">
+                <button style="border-radius: 50%" type="submit" name="id" class="btn btn-info" th:value="${user.id}">Edit</button>
+            </form>
+        </td>
+        <td>
+            <form action="confirmDelete.html">
+                <button style="border-radius: 50%" type="submit" name="id" class="btn btn-warning" th:value="${user.id}">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="addEmployee.html">
+    <button type="button" class="btn btn-default">Add employee</button>
+</a>
+<a href="main.html">
+    <button type="button" class="btn btn-default">Go back to main</button>
+</a>
+<script>
+    function rowClicked(value) {
+        location.href = "/employee?id=" + value;
+    }
+</script>
+</body>
+</html>
