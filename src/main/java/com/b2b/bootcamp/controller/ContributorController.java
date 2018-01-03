@@ -28,4 +28,9 @@ public class ContributorController {
         List<Contributor> anything = service.findAnything();
         return anything;
     }
+    @RequestMapping("/listDuplicate")
+    public List<Contributor> listaDuplicate() {
+        List<Contributor> anything = service.findAnything();
+        return anything;
+    }
 }
