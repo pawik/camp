@@ -27,6 +27,10 @@ public class ContributorController {
     public List<Contributor> lista() {
         List<Contributor> anything = service.findAnything();
         return anything;
+    } @RequestMapping("/listD")
+    public List<Contributor> listaD() {
+        List<Contributor> anything = service.findAnything();
+        return anything;
     }
 
 }
