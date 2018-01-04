@@ -28,4 +28,6 @@ public class App implements CommandLineRunner {
         dao.save(reservation);
         String string = "nic nie znaczaca zmienna";
     }
+
+    //Test
 }
