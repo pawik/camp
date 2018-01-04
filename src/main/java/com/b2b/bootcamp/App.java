@@ -28,5 +28,5 @@ public class App implements CommandLineRunner {
         dao.save(reservation);
     }
 
-    //HelloWorld!!!
+    //Test
 }
