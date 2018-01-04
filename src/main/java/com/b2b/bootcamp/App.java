@@ -26,5 +26,6 @@ public class App implements CommandLineRunner {
         reservation.setArrivalTime(LocalDateTime.now());
         reservation.setDepartureTime(LocalDateTime.now().plusDays(1));
         dao.save(reservation);
+        String string = "nic nie znaczaca zmienna";
     }
 }
