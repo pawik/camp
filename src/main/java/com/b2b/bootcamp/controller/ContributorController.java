@@ -20,6 +20,7 @@ public class ContributorController {
         model.setViewName("listOdAnything");
         model.addObject("list", anything);
         System.out.println("duplicate");
+        System.out.println("cos");
         return model;
     }
 
