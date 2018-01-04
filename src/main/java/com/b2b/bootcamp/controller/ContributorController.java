@@ -19,6 +19,8 @@ public class ContributorController {
         List<Contributor> anything = service.findAnything();
         model.setViewName("listOdAnything");
         model.addObject("list", anything);
+        System.out.println("duplicate");
+        System.out.println("cos");
         return model;
     }
 
